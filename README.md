@@ -1,2 +1,2 @@
 # Some-Mathematics
-Some mathematical derivation and Python C++ implementation
+Python or C++implementation of some mathematical derivation and algorithms

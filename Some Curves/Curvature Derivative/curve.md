@@ -31,7 +31,7 @@
 
 假定 $(x_t, y_t)$ 处的切点为 $\alpha$，则此点处曲线的斜率为 $tan(\alpha)$。$(x_t, y_t)$ 的变量都为 $t$，假定 $t$ 有一个小的增量 $\Delta_t$ ，则 $x_t$ 与 $y_t$ 相应的都有一个小的增量 $\Delta_x$ 与 $\Delta_y$ 。如下图所示，当 $\Delta_t$ 很小时，$\frac{\Delta_y}{\Delta_x} \approx tan(\alpha)$ 。
 
-<img src="D:\GitHub\Some-Mathematics\pics\Some Curves\Curvature Derivative\curve.jpg" width="600" />
+<img src="D:\GitHub\Some-Mathematics\pics\Some Curves\Curvature Derivative\curve.jpg" width="550" />
 
 a与b之间的距离dx即x的微分。dx曲线增量为dy，即y的微分。因为dx是无穷小量，所以ab连线即为切线，斜率是 $f^{\prime}(x)=\frac{dy}{dx}$。
 

@@ -72,15 +72,16 @@ def a_star_search(graph, start, goal):
             if next not in came_from or new_cost < cost_so_far[next]:
                 came_from[next] = current
                 cost_so_far[next] = new_cost
-                priority = new_cost
+                priority = new_cost + heuristic(goal, next)
                 frontier.put(next, priority)
     
     return came_from, cost_so_far
 
 
-start, goal = (1, 4), (7, 8)
+start, goal = (1, 4), (8, 3)
 came_from, cost_so_far = a_star_search(diagram4, start, goal)
-draw_grid(diagram4, width=3, point_to=came_from, start=start, goal=goal)
+draw_grid(diagram4, point_to=came_from, start=start, goal=goal)
 print()
-draw_grid(diagram4, width=3, number=cost_so_far, start=start, goal=goal)
+draw_grid(diagram4, path=reconstruct_path(came_from, start=start, goal=goal))
 print()
+draw_grid(diagram4, number=cost_so_far, start=start, goal=goal)

@@ -1,6 +1,6 @@
 # 曲率、曲率（对弧长）的导数以及曲率导数（对弧长）的导数的计算
 
-本文参考[这篇windSeS博主关于曲率的文章]([(37条消息) 曲率、曲率（对弧长）的导数以及曲率导数（对弧长）的导数的计算_windSeS的博客-CSDN博客_曲率公式推导过程](https://blog.csdn.net/u013468614/article/details/108416552))
+本文参考[这篇windSeS博主关于曲率的文章](https://blog.csdn.net/u013468614/article/details/108416552)
 
 ## 1.曲线的表示形式
 
@@ -31,8 +31,10 @@
 
 假定 $(x_t, y_t)$ 处的切点为 $\alpha$，则此点处曲线的斜率为 $tan(\alpha)$。$(x_t, y_t)$ 的变量都为 $t$，假定 $t$ 有一个小的增量 $\Delta_t$ ，则 $x_t$ 与 $y_t$ 相应的都有一个小的增量 $\Delta_x$ 与 $\Delta_y$ 。如下图所示，当 $\Delta_t$ 很小时，$\frac{\Delta_y}{\Delta_x} \approx tan(\alpha)$ 。
 
-<img src="D:\GitHub\Some-Mathematics\pics\Some Curves\Curvature Derivative\curve.jpg" width="550" />
-
+<div align=center>
+<img src="https://github.com/6Lackiu/Mathematics-and-Algorithms/raw/main/pics/Some%20Curves/Curvature%20Derivative/curve.jpg" width="400" height="300"/><br/>
+</div>
+  
 a与b之间的距离dx即x的微分。dx曲线增量为dy，即y的微分。因为dx是无穷小量，所以ab连线即为切线，斜率是 $f^{\prime}(x)=\frac{dy}{dx}$。
 
 ${\Delta_x}$ 与 ${\Delta_y}$ 为 $x_t$ 与 $y_t$ 在 t 处的微分，一般分别表示为 dx 和 dy。$x\prime$ 与 $y\prime$ 表示函数 $x(t)$，$y(t)$ 对 t 的导数。

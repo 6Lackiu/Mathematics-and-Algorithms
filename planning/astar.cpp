@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <unordered_set>
 
 struct Node {
     int x, y;           // 节点坐标
@@ -33,8 +34,8 @@ std::vector<Node*> AStarSearch(std::vector<std::vector<int>>& grid, Node* start,
     // 创建一个优先队列用于存放待扩展的节点
     std::priority_queue<Node*, std::vector<Node*>, CompareNode> openList;
 
-    // 创建一个二维数组来记录已经访问过的节点
-    std::vector<std::vector<bool>> visited(rows, std::vector<bool>(cols, false));
+    // 创建一个set容器来记录已经访问过的节点
+    std::unordered_set<Node*> closeList;
 
     // 将起点加入 openList
     openList.push(start);
@@ -56,23 +57,26 @@ std::vector<Node*> AStarSearch(std::vector<std::vector<int>>& grid, Node* start,
         }
 
         // 标记当前节点为已访问
-        visited[current->x][current->y] = true;
+        closeList.insert(current);
 
         // 对当前节点的相邻节点进行扩展
         for (int i = 0; i < 4; i++) {
             int nx = current->x + dx[i];
             int ny = current->y + dy[i];
+            Node* neighbor = new Node(nx, ny);
 
             // 判断相邻节点是否在网格范围内，并且没有被访问过，并且不是障碍物
-            if (nx >= 0 && nx < rows && ny >= 0 && ny < cols && !visited[nx][ny] && grid[nx][ny] != 1) {
+            if (nx >= 0 && nx < rows && ny >= 0 && ny < cols && !closeList.count(neighbor) && grid[nx][ny] != 1) {
                 // 创建相邻节点
-                Node* neighbor = new Node(nx, ny);
                 neighbor->g = current->g + 1;
                 neighbor->h = abs(nx - end->x) + abs(ny - end->y);
                 neighbor->parent = current;
 
                 // 将相邻节点加入 openList
                 openList.push(neighbor);
+            }
+            else {
+                delete neighbor;
             }
         }
     }
